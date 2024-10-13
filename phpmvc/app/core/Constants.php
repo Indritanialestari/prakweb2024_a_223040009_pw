@@ -1,2 +1,14 @@
 <?php
-define('BASEURL', 'http://localhost/prakweb_c_203040119/mvc/public');
+
+class Controller
+{
+  public function view($view, $data = [])
+  {
+    require_once '../app/views/' . $view . '.php';
+  }
+  public function model($model)
+  {
+    require_once '../app/models/' . $model . '.php';
+    return new $model;
+  }
+}
